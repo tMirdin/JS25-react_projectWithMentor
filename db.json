@@ -1,3 +1,28 @@
 {
-  "products": []
+  "products": [
+    {
+      "category": "phone",
+      "title": "Apple",
+      "model": "XR",
+      "description": "",
+      "color": "",
+      "price": "",
+      "img1": "",
+      "img2": "",
+      "img3": "",
+      "id": 1
+    },
+    {
+      "category": "hjh",
+      "title": "jh",
+      "model": "jh",
+      "description": "jh",
+      "color": "jh",
+      "price": "jhj",
+      "img1": "hjhj",
+      "img2": "jhjh",
+      "img3": "jhjh",
+      "id": 2
+    }
+  ]
 }
