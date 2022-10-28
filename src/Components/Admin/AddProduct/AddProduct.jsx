@@ -4,8 +4,8 @@ import { productContext } from "../../../context/ProductContextProvider";
 import "./AddProduct.css";
 
 const AddProduct = () => {
-  const infoFromContext = useContext(productContext);
-  console.log(infoFromContext);
+  const {} = useContext(productContext);
+
   return (
     <>
       <h2 id="add-title">Добавление товара</h2>
