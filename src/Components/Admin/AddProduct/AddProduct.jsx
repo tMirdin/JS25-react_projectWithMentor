@@ -1,8 +1,11 @@
 import { Button, TextField } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
+import { productContext } from "../../../context/ProductContextProvider";
 import "./AddProduct.css";
 
 const AddProduct = () => {
+  const infoFromContext = useContext(productContext);
+  console.log(infoFromContext);
   return (
     <>
       <h2 id="add-title">Добавление товара</h2>

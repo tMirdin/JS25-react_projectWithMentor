@@ -1,13 +1,14 @@
 import React from "react";
 import NavBar from "./Components/NavBar/NavBar";
-import ProductDetails from "./Components/Products/ProductDetails/ProductDetails";
+import ProductContextProvider from "./context/ProductContextProvider";
+import AddProduct from "./Components/Admin/AddProduct/AddProduct";
 
 const App = () => {
   return (
-    <div>
+    <ProductContextProvider>
       <NavBar />
-      <ProductDetails />
-    </div>
+      <AddProduct />
+    </ProductContextProvider>
   );
 };
 
