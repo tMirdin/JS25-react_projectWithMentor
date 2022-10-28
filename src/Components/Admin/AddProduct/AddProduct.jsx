@@ -15,7 +15,23 @@ const AddProduct = () => {
   const [img2, setImg2] = useState("");
   const [img3, setImg3] = useState("");
 
-  function handleAdd() {
+  function handleAdd(e) {
+    e.preventDefault(); // останавливает автообновление бразуреа при отправке данных через form
+    if (
+      !category.trim() ||
+      !title.trim() ||
+      !model.trim() ||
+      !description.trim() ||
+      !color.trim() ||
+      !price.trim() ||
+      !img1.trim() ||
+      !img2.trim() ||
+      !img3.trim()
+    ) {
+      alert("Заполните все поля!");
+      return;
+    }
+
     let obj = {
       category,
       title,
@@ -28,12 +44,21 @@ const AddProduct = () => {
       img3,
     };
     addProduct(obj);
+    setCategory("");
+    setTitle("");
+    setModel("");
+    setDescription("");
+    setColor("");
+    setPrice("");
+    setImg1("");
+    setImg2("");
+    setImg3("");
   }
 
   return (
     <>
       <h2 id="add-title">Добавление товара</h2>
-      <form id="form-add" onSubmit={handleAdd}>
+      <form id="form-add" onSubmit={(e) => handleAdd(e)}>
         <TextField
           className="outlined-basic"
           label="Категория"
