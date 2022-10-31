@@ -11,7 +11,7 @@ import React, { useContext, useState } from "react";
 import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { productContext } from "../../../context/ProductContextProvider";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "./ProductDetails.css";
@@ -127,13 +127,15 @@ const ProductDetails = () => {
                   >
                     Delete
                   </Button>
-                  <Button
-                    variant="contained"
-                    color="warning"
-                    sx={{ width: "48%" }}
-                  >
-                    Edit
-                  </Button>
+                  <Link to={`/edit/${productDetails.id}`}>
+                    <Button
+                      variant="contained"
+                      color="warning"
+                      sx={{ width: "48%" }}
+                    >
+                      Edit
+                    </Button>
+                  </Link>
                 </Box>
               </Paper>
             </Grid>

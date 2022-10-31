@@ -4,6 +4,7 @@ import HomePage from "./Components/HomePage/HomePage";
 import AddProduct from "./Components/Admin/AddProduct/AddProduct";
 import ProductsList from "./Components/Products/ProductsList/ProductsList";
 import ProductDetails from "./Components/Products/ProductDetails/ProductDetails";
+import EditProduct from "./Components/Admin/EditProduct/EditProduct";
 
 const MainRoutes = () => {
   return (
@@ -12,6 +13,7 @@ const MainRoutes = () => {
       <Route path="/add" element={<AddProduct />} />
       <Route path="/list" element={<ProductsList />} />
       <Route path="/details/:id" element={<ProductDetails />} />
+      <Route path="/edit/:id" element={<EditProduct />} />
     </Routes>
   );
 };
