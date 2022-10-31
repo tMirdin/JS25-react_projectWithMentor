@@ -8,3 +8,10 @@
 .mySwiper .swiper-slide.swiper-slide-thumb-active {
   border-bottom: 5px solid #1b5e20;
 }
+
+.mySwiper2 img {
+  width: 100%;
+}
+.mySwiper img {
+  width: 100%;
+}
