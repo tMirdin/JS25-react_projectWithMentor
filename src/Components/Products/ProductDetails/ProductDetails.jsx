@@ -128,11 +128,7 @@ const ProductDetails = () => {
                     Delete
                   </Button>
                   <Link to={`/edit/${productDetails.id}`}>
-                    <Button
-                      variant="contained"
-                      color="warning"
-                      sx={{ width: "48%" }}
-                    >
+                    <Button variant="contained" color="warning">
                       Edit
                     </Button>
                   </Link>

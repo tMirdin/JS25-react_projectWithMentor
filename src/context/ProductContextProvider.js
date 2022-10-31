@@ -68,11 +68,17 @@ const ProductContextProvider = (props) => {
     }
   }
 
+  async function editProduct(id, editedObj) {
+    await axios.patch(`${API}/${id}`, editedObj);
+    readProduct();
+  }
+
   let cloud = {
     addProduct,
     readProduct,
     readOneProduct,
     deleteProduct,
+    editProduct,
     productsArr: state.product,
     productDetails: state.productDetails,
   };
