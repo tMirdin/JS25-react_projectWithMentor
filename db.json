@@ -13,42 +13,6 @@
       "id": 1
     },
     {
-      "category": "hjh",
-      "title": "jh",
-      "model": "jh",
-      "description": "jh",
-      "color": "jh",
-      "price": "jhj",
-      "img1": "hjhj",
-      "img2": "jhjh",
-      "img3": "jhjh",
-      "id": 2
-    },
-    {
-      "category": "hjhj",
-      "title": "hj",
-      "model": "hj",
-      "description": "hj",
-      "color": "h",
-      "price": "kjk",
-      "img1": "jk",
-      "img2": "jkjkj",
-      "img3": "kjkj",
-      "id": 3
-    },
-    {
-      "category": "87",
-      "title": "87",
-      "model": "87",
-      "description": "87",
-      "color": "87",
-      "price": "8787",
-      "img1": "87",
-      "img2": "8787",
-      "img3": "87878",
-      "id": 4
-    },
-    {
       "category": "phone",
       "title": "Samsung",
       "model": "A30",

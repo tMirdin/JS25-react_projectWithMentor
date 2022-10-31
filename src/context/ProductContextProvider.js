@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { createContext, useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const productContext = createContext(); // облако
 
@@ -23,6 +24,8 @@ function reducer(prevState, action) {
 
 const ProductContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
+
+  const navigate = useNavigate();
 
   // create
   async function addProduct(newProduct) {
@@ -54,10 +57,22 @@ const ProductContextProvider = (props) => {
   }
   // readOneProduct(1);
 
+  // delete
+  async function deleteProduct(id) {
+    try {
+      await axios.delete(`${API}/${id}`);
+      readProduct();
+      navigate("/list");
+    } catch (error) {
+      return error;
+    }
+  }
+
   let cloud = {
     addProduct,
     readProduct,
     readOneProduct,
+    deleteProduct,
     productsArr: state.product,
     productDetails: state.productDetails,
   };

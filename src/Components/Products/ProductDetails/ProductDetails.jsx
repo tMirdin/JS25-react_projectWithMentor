@@ -1,5 +1,6 @@
 import {
   Alert,
+  Box,
   Button,
   Container,
   Grid,
@@ -23,7 +24,8 @@ SwiperCore.use([Thumbs]);
 
 const ProductDetails = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  const { readOneProduct, productDetails } = useContext(productContext);
+  const { readOneProduct, productDetails, deleteProduct } =
+    useContext(productContext);
 
   const { id } = useParams();
 
@@ -110,6 +112,29 @@ const ProductDetails = () => {
                     <AddShoppingCart />
                   </Button>
                 </Alert>
+                <Box
+                  sx={{
+                    mt: "15px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Button
+                    variant="contained"
+                    color="error"
+                    sx={{ width: "48%" }}
+                    onClick={() => deleteProduct(productDetails.id)}
+                  >
+                    Delete
+                  </Button>
+                  <Button
+                    variant="contained"
+                    color="warning"
+                    sx={{ width: "48%" }}
+                  >
+                    Edit
+                  </Button>
+                </Box>
               </Paper>
             </Grid>
           </Grid>
