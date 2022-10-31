@@ -1,4 +1,11 @@
-import { Container, Grid, Paper, Typography } from "@mui/material";
+import {
+  Alert,
+  Button,
+  Container,
+  Grid,
+  Paper,
+  Typography,
+} from "@mui/material";
 import React, { useContext, useState } from "react";
 import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,8 +14,10 @@ import { useParams } from "react-router-dom";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "./ProductDetails.css";
-
 import SwiperCore, { Thumbs } from "swiper";
+import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import { AddShoppingCart } from "@mui/icons-material";
 
 SwiperCore.use([Thumbs]);
 
@@ -69,8 +78,38 @@ const ProductDetails = () => {
               </Swiper>
             </Grid>
             <Grid item xs={6}>
-              <Paper elevation={3} sx={{ padding: "10px" }}>
-                <Typography variant="h4">{productDetails.title}</Typography>
+              <Paper elevation={3} sx={{ padding: "10px", marginTop: "40px" }}>
+                <Typography variant="h4">
+                  {productDetails.title}{" "}
+                  <PhoneIphoneIcon sx={{ fontSize: "30px" }} />
+                </Typography>
+                <Typography variant="h5">{productDetails.model}</Typography>
+                <hr />
+                <Typography sx={{ marginTop: "30px" }}>
+                  {productDetails.description}
+                </Typography>
+                <Alert
+                  icon={<AttachMoneyIcon />}
+                  sx={{
+                    fontSize: "25px",
+                    fontWeight: 700,
+                    mt: "20px",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  Цена: {productDetails.price} сом
+                  <Button variant="contained" sx={{ marginLeft: "20px" }}>
+                    Купить
+                  </Button>
+                  <Button
+                    variant="contained"
+                    color="warning"
+                    sx={{ marginLeft: "20px" }}
+                  >
+                    <AddShoppingCart />
+                  </Button>
+                </Alert>
               </Paper>
             </Grid>
           </Grid>
