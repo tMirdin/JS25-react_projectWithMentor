@@ -11,6 +11,7 @@ import { red, blue } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import "./ProductCard.css";
 
 const ProductCard = ({ obj }) => {
   return (
@@ -18,7 +19,7 @@ const ProductCard = ({ obj }) => {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: blue[500] }} aria-label="recipe">
-            T
+            {obj.category[0].toUpperCase()}
           </Avatar>
         }
         action={
@@ -26,19 +27,18 @@ const ProductCard = ({ obj }) => {
             <MoreVertIcon />
           </IconButton>
         }
-        title={obj.category}
-        subheader={`${obj.title} ${obj.model}`}
+        title={obj.title}
+        subheader={obj.model}
       />
       <CardMedia
         component="img"
         height="150"
-        image="https://login.kg/image/cache/catalog/new/Phones/Apple/iPhone%2014/Pro-Pro%20Max/3-500x500.jpg"
-        alt="Paella dish"
+        image={obj.img1}
+        alt={obj.title}
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with...
+        <Typography variant="body2" color="text.secondary" className="cardText">
+          {obj.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

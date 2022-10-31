@@ -47,6 +47,18 @@
       "img2": "8787",
       "img3": "87878",
       "id": 4
+    },
+    {
+      "category": "phone",
+      "title": "Samsung",
+      "model": "A30",
+      "description": "Galaxy A30 отличается тонким, но прочным корпусом толщиной 7,7 мм с глянцевым покрытием, приятным на ощупь. Переверните его, и вы увидите скрытый датчик отпечатков пальцев и заднюю 3D-панель из стеклопластика, которые дополняют элегантный премиальный дизайн Galaxy A30. Выберите аскетичный белый или черный цвет корпуса либо решитесь на яркий красный или синий. ",
+      "color": "black",
+      "price": "15000",
+      "img1": "https://stg-images.samsung.com/is/image/samsung/pk-galaxy-a30-a305-sm-a305fzwfpak-frontwhite-thumb-152051809",
+      "img2": "https://stg-images.samsung.com/is/image/samsung/pk-galaxy-a30-a305-sm-a305fzwfpak-frontwhite-thumb-152051809",
+      "img3": "https://stg-images.samsung.com/is/image/samsung/pk-galaxy-a30-a305-sm-a305fzwfpak-frontwhite-thumb-152051809",
+      "id": 5
     }
   ]
 }
