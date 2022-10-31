@@ -12,6 +12,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import "./ProductCard.css";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ obj }) => {
   return (
@@ -23,9 +24,11 @@ const ProductCard = ({ obj }) => {
           </Avatar>
         }
         action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
+          <Link to={`/details/${obj.id}`}>
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          </Link>
         }
         title={obj.title}
         subheader={obj.model}

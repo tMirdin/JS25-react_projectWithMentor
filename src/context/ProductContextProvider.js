@@ -7,12 +7,15 @@ const API = "http://localhost:8000/products";
 
 const INIT_STATE = {
   products: null,
+  productDetails: null,
 };
 
 function reducer(prevState, action) {
   switch (action.type) {
     case "GET_PRODUCT":
-      return { product: action.payload };
+      return { ...prevState, product: action.payload };
+    case "GET_ONE_PRODUCT":
+      return { ...prevState, productDetails: action.payload };
     default:
       return prevState;
   }
@@ -42,10 +45,21 @@ const ProductContextProvider = (props) => {
   //   readProduct();
   //   console.log(state);
 
+  async function readOneProduct(id) {
+    const { data } = await axios(`${API}/${id}`);
+    dispatch({
+      type: "GET_ONE_PRODUCT",
+      payload: data,
+    });
+  }
+  // readOneProduct(1);
+
   let cloud = {
     addProduct,
     readProduct,
+    readOneProduct,
     productsArr: state.product,
+    productDetails: state.productDetails,
   };
   return (
     <productContext.Provider value={cloud}>
