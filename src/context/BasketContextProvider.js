@@ -2,15 +2,22 @@ import React, { createContext, useReducer } from "react";
 
 export const basketContext = createContext();
 
+function getCountProductsBasket() {
+  let basket = JSON.parse(localStorage.getItem("basket"));
+  return basket ? basket.products.length : 0;
+}
+
 const INIT_STATE = {
   basket: JSON.parse(localStorage.getItem("basket")),
-  basketCount: 0,
+  basketCount: getCountProductsBasket(),
 };
 
 function reducer(prevState, action) {
   switch (action.type) {
     case "GET_BASKET":
       return { ...prevState, basket: action.payload };
+    case "CHANGE_BASKET_COUNT":
+      return { ...prevState, basketCount: action.payload };
     default:
       return prevState;
   }
@@ -24,6 +31,7 @@ const BasketContextProvider = ({ children }) => {
     if (basket === null) {
       basket = {
         products: [],
+        totalPrice: 0,
       };
     }
 
@@ -45,8 +53,12 @@ const BasketContextProvider = ({ children }) => {
     } else {
       basket.products.push(newProduct);
     }
-
+    basket.totalPrice = calcTotalPrice(basket.products);
     localStorage.setItem("basket", JSON.stringify(basket));
+    dispatch({
+      type: "CHANGE_BASKET_COUNT",
+      payload: basket.products.length,
+    });
   }
 
   function getBasket() {
@@ -54,6 +66,7 @@ const BasketContextProvider = ({ children }) => {
     if (!basket) {
       basket = {
         products: [],
+        totalPrice: 0,
       };
     }
     console.log(132456);
@@ -72,8 +85,17 @@ const BasketContextProvider = ({ children }) => {
       }
       return elem;
     });
+    basket.totalPrice = calcTotalPrice(basket.products);
     localStorage.setItem("basket", JSON.stringify(basket));
     getBasket();
+  }
+
+  function calcTotalPrice(products) {
+    let total = 0;
+    products.map((item) => {
+      total += item.subPrice;
+    });
+    return total;
   }
 
   const cloud = {
@@ -81,6 +103,7 @@ const BasketContextProvider = ({ children }) => {
     getBasket,
     changeProductCount,
     productsInBasket: state.basket,
+    basketCount: state.basketCount,
   };
   return (
     <basketContext.Provider value={cloud}>{children}</basketContext.Provider>

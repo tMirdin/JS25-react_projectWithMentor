@@ -1,4 +1,5 @@
 import {
+  Button,
   Container,
   Paper,
   Table,
@@ -26,8 +27,8 @@ const Basket = () => {
     <>
       <Container maxWidth="lg">
         <Typography variant="h3">My Basket</Typography>
-        <>
-          {productsInBasket ? (
+        {productsInBasket ? (
+          <>
             <TableContainer component={Paper}>
               <Table sx={{ minWidth: 650 }}>
                 <TableHead>
@@ -66,10 +67,13 @@ const Basket = () => {
                 </TableBody>
               </Table>
             </TableContainer>
-          ) : (
-            <h1>Loading...</h1>
-          )}
-        </>
+            <Button variant="contained" sx={{ margin: "20px auto" }}>
+              Buy now for {productsInBasket.totalPrice}
+            </Button>
+          </>
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </Container>
     </>
   );

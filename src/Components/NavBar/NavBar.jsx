@@ -17,6 +17,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Link } from "react-router-dom";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { basketContext } from "../../context/BasketContextProvider";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -59,6 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function NavBar() {
+  const { basketCount } = React.useContext(basketContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -205,7 +207,7 @@ function NavBar() {
               color="inherit"
             >
               <Link to="/basket">
-                <Badge badgeContent={4} color="error">
+                <Badge badgeContent={basketCount} color="error">
                   <AddShoppingCartIcon />
                 </Badge>
               </Link>

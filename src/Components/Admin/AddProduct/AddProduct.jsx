@@ -95,6 +95,7 @@ const AddProduct = () => {
           onChange={(e) => setColor(e.target.value)}
         />
         <TextField
+          type="number"
           className="outlined-basic"
           label="Цена"
           variant="outlined"
