@@ -15,8 +15,9 @@ import { useContext } from "react";
 import { basketContext } from "../../context/BasketContextProvider";
 
 const Basket = () => {
-  const { productsInBasket, getBasket } = useContext(basketContext);
-  console.log(productsInBasket);
+  const { productsInBasket, getBasket, changeProductCount } =
+    useContext(basketContext);
+
   useEffect(() => {
     getBasket();
   }, []);
@@ -26,7 +27,7 @@ const Basket = () => {
       <Container maxWidth="lg">
         <Typography variant="h3">My Basket</Typography>
         <>
-          {productsInBasket.products ? (
+          {productsInBasket ? (
             <TableContainer component={Paper}>
               <Table sx={{ minWidth: 650 }}>
                 <TableHead>
@@ -40,22 +41,28 @@ const Basket = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {productsInBasket.products.length
-                    ? productsInBasket.products.map((elem) => (
-                        <TableRow>
-                          <TableCell>{elem.item.title}</TableCell>
-                          <TableCell>{elem.item.model}</TableCell>
-                          <TableCell>
-                            <img src={elem.item.img1} alt="apple" width={40} />
-                          </TableCell>
-                          <TableCell>{elem.item.price}</TableCell>
-                          <TableCell>
-                            <input type="number" style={{ width: "40px" }} />
-                          </TableCell>
-                          <TableCell>120000 com</TableCell>
-                        </TableRow>
-                      ))
-                    : null}
+                  {productsInBasket.products.map((elem) => (
+                    <TableRow>
+                      <TableCell>{elem.item.title}</TableCell>
+                      <TableCell>{elem.item.model}</TableCell>
+                      <TableCell>
+                        <img src={elem.item.img1} alt="apple" width={40} />
+                      </TableCell>
+                      <TableCell>{elem.item.price}</TableCell>
+                      <TableCell>
+                        <input
+                          min="1"
+                          type="number"
+                          style={{ width: "40px" }}
+                          value={elem.count}
+                          onChange={(e) =>
+                            changeProductCount(elem.item.id, e.target.value)
+                          }
+                        />
+                      </TableCell>
+                      <TableCell>{elem.subPrice} сом</TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             </TableContainer>

@@ -30,7 +30,7 @@ const BasketContextProvider = ({ children }) => {
     let newProduct = {
       item: productObj,
       count: 1,
-      subPrice: 0,
+      subPrice: productObj.price,
     };
 
     // Хранение дубликатов
@@ -63,9 +63,23 @@ const BasketContextProvider = ({ children }) => {
     });
   }
 
+  function changeProductCount(id, count) {
+    let basket = JSON.parse(localStorage.getItem("basket"));
+    basket.products = basket.products.map((elem) => {
+      if (elem.item.id === id) {
+        elem.count = count;
+        elem.subPrice = count * elem.item.price;
+      }
+      return elem;
+    });
+    localStorage.setItem("basket", JSON.stringify(basket));
+    getBasket();
+  }
+
   const cloud = {
     addProductToBasket,
     getBasket,
+    changeProductCount,
     productsInBasket: state.basket,
   };
   return (
