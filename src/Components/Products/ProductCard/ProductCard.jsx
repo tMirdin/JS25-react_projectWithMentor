@@ -12,9 +12,11 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import "./ProductCard.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 const ProductCard = ({ obj }) => {
+  let navigate = useNavigate();
   return (
     <Card sx={{ maxWidth: 300 }}>
       <CardHeader
@@ -35,7 +37,7 @@ const ProductCard = ({ obj }) => {
       />
       <CardMedia
         component="img"
-        height="150"
+        height="280"
         image={obj.img1}
         alt={obj.title}
       />

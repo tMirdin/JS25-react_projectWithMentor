@@ -11,7 +11,7 @@ import React, { useContext, useState } from "react";
 import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { productContext } from "../../../context/ProductContextProvider";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import "./ProductDetails.css";
@@ -32,6 +32,8 @@ const ProductDetails = () => {
   useEffect(() => {
     readOneProduct(id);
   }, [id]);
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -127,11 +129,19 @@ const ProductDetails = () => {
                   >
                     Delete
                   </Button>
-                  <Link to={`/edit/${productDetails.id}`}>
-                    <Button variant="contained" color="warning">
-                      Edit
-                    </Button>
-                  </Link>
+                  {/* <Link
+                    to={`/edit/${productDetails.id}`}
+                    style={{ width: "50%" }}
+                  > */}
+                  <Button
+                    variant="contained"
+                    color="warning"
+                    sx={{ width: "48%" }}
+                    onClick={() => navigate(`/edit/${productDetails.id}`)}
+                  >
+                    Edit
+                  </Button>
+                  {/* </Link> */}
                 </Box>
               </Paper>
             </Grid>
