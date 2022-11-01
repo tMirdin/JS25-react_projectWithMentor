@@ -16,7 +16,7 @@ import { basketContext } from "../../context/BasketContextProvider";
 
 const Basket = () => {
   const { productsInBasket, getBasket } = useContext(basketContext);
-
+  console.log(productsInBasket);
   useEffect(() => {
     getBasket();
   }, []);
@@ -26,7 +26,7 @@ const Basket = () => {
       <Container maxWidth="lg">
         <Typography variant="h3">My Basket</Typography>
         <>
-          {productsInBasket ? (
+          {productsInBasket.products ? (
             <TableContainer component={Paper}>
               <Table sx={{ minWidth: 650 }}>
                 <TableHead>

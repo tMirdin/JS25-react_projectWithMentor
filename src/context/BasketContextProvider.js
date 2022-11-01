@@ -3,7 +3,7 @@ import React, { createContext, useReducer } from "react";
 export const basketContext = createContext();
 
 const INIT_STATE = {
-  basket: null,
+  basket: JSON.parse(localStorage.getItem("basket")),
   basketCount: 0,
 };
 
@@ -66,7 +66,7 @@ const BasketContextProvider = ({ children }) => {
   const cloud = {
     addProductToBasket,
     getBasket,
-    productsInBasket: state.products,
+    productsInBasket: state.basket,
   };
   return (
     <basketContext.Provider value={cloud}>{children}</basketContext.Provider>
