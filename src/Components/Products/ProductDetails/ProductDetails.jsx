@@ -19,6 +19,7 @@ import SwiperCore, { Thumbs } from "swiper";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import { AddShoppingCart } from "@mui/icons-material";
+import { basketContext } from "../../../context/BasketContextProvider";
 
 SwiperCore.use([Thumbs]);
 
@@ -26,6 +27,8 @@ const ProductDetails = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { readOneProduct, productDetails, deleteProduct } =
     useContext(productContext);
+
+  const { addProductToBasket } = useContext(basketContext);
 
   const { id } = useParams();
 
@@ -110,6 +113,7 @@ const ProductDetails = () => {
                     variant="contained"
                     color="warning"
                     sx={{ marginLeft: "20px" }}
+                    onClick={() => addProductToBasket(productDetails)}
                   >
                     <AddShoppingCart />
                   </Button>
