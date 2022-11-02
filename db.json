@@ -23,6 +23,30 @@
       "img2": "https://stg-images.samsung.com/is/image/samsung/pk-galaxy-a30-a305-sm-a305fzwfpak-frontwhite-thumb-152051809",
       "img3": "https://stg-images.samsung.com/is/image/samsung/pk-galaxy-a30-a305-sm-a305fzwfpak-frontwhite-thumb-152051809",
       "id": 5
+    },
+    {
+      "category": "wathc",
+      "title": "Apple",
+      "model": "7 series",
+      "description": "Уведомления о слишком низком и высоком пульсе  Уведомления о нерегулярном ритме сердца4  Экстренный вызов — SOS5  Функция обнаружения падения",
+      "color": "Black",
+      "price": "30000",
+      "img1": "https://login.kg/image/catalog/new/Aksessuary/Apple/Chasy/Apple%20Watch%20Series%205%2044mm/1.jpg",
+      "img2": "https://www.apple.com/ru/watch/images/meta/gps/og__n5qzveqr596m.png",
+      "img3": "https://login.kg/image/catalog/new/Aksessuary/Apple/Chasy/Apple%20Watch%20Series%205%2044mm/1.jpg",
+      "id": 6
+    },
+    {
+      "category": "phone",
+      "title": "qwert",
+      "model": "asdf",
+      "description": "asdf",
+      "color": "sdfgb",
+      "price": 11999,
+      "img1": "dasd",
+      "img2": "asd",
+      "img3": "asds",
+      "id": 7
     }
   ]
 }

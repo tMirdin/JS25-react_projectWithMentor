@@ -98,6 +98,10 @@ const BasketContextProvider = ({ children }) => {
     return total;
   }
 
+  //   delete products in basket
+
+  function deleteBasketProduct() {}
+
   const cloud = {
     addProductToBasket,
     getBasket,

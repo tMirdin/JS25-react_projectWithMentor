@@ -10,7 +10,7 @@ const AddProduct = () => {
   const [model, setModel] = useState("");
   const [description, setDescription] = useState("");
   const [color, setColor] = useState("");
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState(0);
   const [img1, setImg1] = useState("");
   const [img2, setImg2] = useState("");
   const [img3, setImg3] = useState("");
@@ -38,7 +38,7 @@ const AddProduct = () => {
       model,
       description,
       color,
-      price,
+      price: +price,
       img1,
       img2,
       img3,
@@ -49,7 +49,7 @@ const AddProduct = () => {
     setModel("");
     setDescription("");
     setColor("");
-    setPrice("");
+    setPrice(0);
     setImg1("");
     setImg2("");
     setImg3("");
