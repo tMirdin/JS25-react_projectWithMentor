@@ -49,7 +49,7 @@ const Basket = () => {
                 </TableHead>
                 <TableBody>
                   {productsInBasket.products.map((elem) => (
-                    <TableRow>
+                    <TableRow key={elem.item.id}>
                       <TableCell>{elem.item.title}</TableCell>
                       <TableCell>{elem.item.model}</TableCell>
                       <TableCell>

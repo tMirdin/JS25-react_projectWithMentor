@@ -25,7 +25,7 @@
       "id": 5
     },
     {
-      "category": "wathc",
+      "category": "watch",
       "title": "Apple",
       "model": "7 series",
       "description": "Уведомления о слишком низком и высоком пульсе  Уведомления о нерегулярном ритме сердца4  Экстренный вызов — SOS5  Функция обнаружения падения",
@@ -42,7 +42,7 @@
       "model": "asdf",
       "description": "asdf",
       "color": "sdfgb",
-      "price": "456789",
+      "price": 456789,
       "img1": "dasd",
       "img2": "asd",
       "img3": "asds",
@@ -54,7 +54,7 @@
       "model": "676",
       "description": "786",
       "color": "76",
-      "price": "10000",
+      "price": 10000,
       "img1": "87678",
       "img2": "67",
       "img3": "676",
