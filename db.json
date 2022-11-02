@@ -42,11 +42,23 @@
       "model": "asdf",
       "description": "asdf",
       "color": "sdfgb",
-      "price": 11999,
+      "price": "456789",
       "img1": "dasd",
       "img2": "asd",
       "img3": "asds",
       "id": 7
+    },
+    {
+      "category": "78678",
+      "title": "678",
+      "model": "676",
+      "description": "786",
+      "color": "76",
+      "price": "10000",
+      "img1": "87678",
+      "img2": "67",
+      "img3": "676",
+      "id": 8
     }
   ]
 }

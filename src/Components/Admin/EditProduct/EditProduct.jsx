@@ -32,7 +32,7 @@ const EditProduct = () => {
       !inpValues.model.trim() ||
       !inpValues.description.trim() ||
       !inpValues.color.trim() ||
-      !inpValues.price.trim() ||
+      !inpValues.price ||
       !inpValues.img1.trim() ||
       !inpValues.img2.trim() ||
       !inpValues.img3.trim()
@@ -93,7 +93,8 @@ const EditProduct = () => {
           label="Цена"
           variant="outlined"
           name="price"
-          value={inpValues.price}
+          type="number"
+          value={+inpValues.price}
           onChange={(e) => handleChange(e)}
         />
         <TextField
