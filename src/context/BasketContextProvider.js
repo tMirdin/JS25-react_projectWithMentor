@@ -69,7 +69,7 @@ const BasketContextProvider = ({ children }) => {
         totalPrice: 0,
       };
     }
-    console.log(132456);
+
     dispatch({
       type: "GET_BASKET",
       payload: basket,
@@ -100,12 +100,25 @@ const BasketContextProvider = ({ children }) => {
 
   //   delete products in basket
 
-  function deleteBasketProduct() {}
+  function deleteBasketProduct(id) {
+    let basket = JSON.parse(localStorage.getItem("basket"));
+    basket.products = basket.products.filter((elem) => {
+      return elem.item.id !== id;
+    });
+    basket.totalPrice = calcTotalPrice(basket.products);
+    dispatch({
+      type: "CHANGE_BASKET_COUNT",
+      payload: basket.products.length,
+    });
+    localStorage.setItem("basket", JSON.stringify(basket));
+    getBasket();
+  }
 
   const cloud = {
     addProductToBasket,
     getBasket,
     changeProductCount,
+    deleteBasketProduct,
     productsInBasket: state.basket,
     basketCount: state.basketCount,
   };

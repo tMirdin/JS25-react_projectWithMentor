@@ -14,10 +14,16 @@ import React from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { basketContext } from "../../context/BasketContextProvider";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import "./Basket.css";
 
 const Basket = () => {
-  const { productsInBasket, getBasket, changeProductCount } =
-    useContext(basketContext);
+  const {
+    productsInBasket,
+    getBasket,
+    changeProductCount,
+    deleteBasketProduct,
+  } = useContext(basketContext);
 
   useEffect(() => {
     getBasket();
@@ -62,6 +68,11 @@ const Basket = () => {
                         />
                       </TableCell>
                       <TableCell>{elem.subPrice} сом</TableCell>
+                      <TableCell
+                        onClick={() => deleteBasketProduct(elem.item.id)}
+                      >
+                        <DeleteForeverIcon className="deleteIconBasket" />
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
