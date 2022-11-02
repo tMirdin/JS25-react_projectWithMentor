@@ -42,16 +42,16 @@
       "model": "asdf",
       "description": "asdf",
       "color": "sdfgb",
-      "price": 456789,
+      "price": 45678,
       "img1": "dasd",
       "img2": "asd",
       "img3": "asds",
       "id": 7
     },
     {
-      "category": "78678",
-      "title": "678",
-      "model": "676",
+      "category": "laptop",
+      "title": "Asus",
+      "model": "AsRock",
       "description": "786",
       "color": "76",
       "price": 10000,
@@ -59,6 +59,18 @@
       "img2": "67",
       "img3": "676",
       "id": 8
+    },
+    {
+      "category": "laptop",
+      "title": "Apple",
+      "model": "MacBook Air m1",
+      "description": "Уведомления о слишком низком и высоком пульсе  Уведомления о нерегулярном ритме сердца4  Экстренный вызов — SOS5  Функция обнаружения падения",
+      "color": "Black",
+      "price": 30000,
+      "img1": "https://login.kg/image/catalog/new/Aksessuary/Apple/Chasy/Apple%20Watch%20Series%205%2044mm/1.jpg",
+      "img2": "https://www.apple.com/ru/watch/images/meta/gps/og__n5qzveqr596m.png",
+      "img3": "https://login.kg/image/catalog/new/Aksessuary/Apple/Chasy/Apple%20Watch%20Series%205%2044mm/1.jpg",
+      "id": 9
     }
   ]
 }

@@ -16,16 +16,21 @@ const ProductsList = () => {
       setParamsSearch({
         price_gte: price[0],
         price_lte: price[1],
+        q: paramsSearch.get("q") || "",
       });
     } else {
       setParamsSearch({
         category: category,
         price_gte: price[0],
         price_lte: price[1],
+        q: paramsSearch.get("q") || "",
       });
     }
-    readProduct();
   }, [category, price]);
+
+  useEffect(() => {
+    readProduct();
+  }, [paramsSearch]);
   return (
     <>
       <Grid sx={{ width: "40%" }} ml="40px" my="20px">

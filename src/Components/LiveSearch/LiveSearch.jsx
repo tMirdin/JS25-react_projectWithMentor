@@ -48,16 +48,18 @@ const LiveSearch = () => {
   const [searchValue, setSearchValue] = useState("");
   const [paramsSearch, setParamsSearch] = useSearchParams();
   const location = useLocation();
-  // console.log(location);
 
   useEffect(() => {
     if (location.pathname === "/list") {
       // todo   setSearchValue(""); доработать
       setParamsSearch({
         q: searchValue,
+        price_gte: +paramsSearch.get("price_gte"),
+        price_lte: +paramsSearch.get("price_lte"),
       });
     }
   }, [searchValue]);
+
   return (
     <Search>
       <SearchIconWrapper>
