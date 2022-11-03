@@ -72,9 +72,9 @@ const ProductsList = () => {
         my="20px"
       >
         <Pagination
-          count={pageTotalCount}
+          count={+pageTotalCount}
           color="secondary"
-          page={page}
+          page={+page}
           onChange={(e, value) => setPage(value)}
         />
       </Grid>
