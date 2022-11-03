@@ -10,20 +10,19 @@ const ProductsList = () => {
   const [paramsSearch, setParamsSearch] = useSearchParams();
   const [category, setCategory] = useState("all");
   const [price, setPrice] = useState([0, 200000]);
-
+  // console.log(paramsSearch.get("q"));
   useEffect(() => {
     if (category === "all") {
       setParamsSearch({
         price_gte: price[0],
         price_lte: price[1],
-        q: paramsSearch.get("q") || "",
+        q: paramsSearch.get("q") || "", // null || ""
       });
     } else {
       setParamsSearch({
         category: category,
         price_gte: price[0],
         price_lte: price[1],
-        q: paramsSearch.get("q") || "",
       });
     }
   }, [category, price]);
@@ -31,6 +30,7 @@ const ProductsList = () => {
   useEffect(() => {
     readProduct();
   }, [paramsSearch]);
+
   return (
     <>
       <Grid sx={{ width: "40%" }} ml="40px" my="20px">

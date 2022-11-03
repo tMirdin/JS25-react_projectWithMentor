@@ -71,6 +71,18 @@
       "img2": "https://www.apple.com/ru/watch/images/meta/gps/og__n5qzveqr596m.png",
       "img3": "https://login.kg/image/catalog/new/Aksessuary/Apple/Chasy/Apple%20Watch%20Series%205%2044mm/1.jpg",
       "id": 9
+    },
+    {
+      "category": "phone",
+      "title": "asus",
+      "model": "sdafg",
+      "description": "sdfghn",
+      "color": "sdfgh",
+      "price": 124565,
+      "img1": "rewr",
+      "img2": "dsfsdf",
+      "img3": "sdfsdf",
+      "id": 10
     }
   ]
 }
