@@ -16,10 +16,15 @@ import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { basketContext } from "../../context/BasketContextProvider";
 import LiveSearch from "../LiveSearch/LiveSearch";
+import { authContext } from "../../context/AuthContextProvider";
+import { Button } from "@mui/material";
 
 function NavBar() {
   const location = useLocation();
   const { basketCount } = React.useContext(basketContext);
+
+  const { user, handleLogout } = React.useContext(authContext);
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -168,6 +173,12 @@ function NavBar() {
                 </Badge>
               </Link>
             </IconButton>
+            <Link to="/">
+              {user.email ? user.email : <span>Не зашел</span>}
+            </Link>
+            <Button sx={{ color: "white" }} onClick={handleLogout}>
+              LogOut
+            </Button>
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
@@ -186,7 +197,9 @@ function NavBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <Link to="/auth">
+                <AccountCircle />
+              </Link>
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
