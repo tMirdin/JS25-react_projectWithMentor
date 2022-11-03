@@ -22,7 +22,7 @@
       "img1": "https://stg-images.samsung.com/is/image/samsung/pk-galaxy-a30-a305-sm-a305fzwfpak-frontwhite-thumb-152051809",
       "img2": "https://stg-images.samsung.com/is/image/samsung/pk-galaxy-a30-a305-sm-a305fzwfpak-frontwhite-thumb-152051809",
       "img3": "https://stg-images.samsung.com/is/image/samsung/pk-galaxy-a30-a305-sm-a305fzwfpak-frontwhite-thumb-152051809",
-      "id": 5
+      "id": 2
     },
     {
       "category": "watch",
@@ -34,7 +34,7 @@
       "img1": "https://login.kg/image/catalog/new/Aksessuary/Apple/Chasy/Apple%20Watch%20Series%205%2044mm/1.jpg",
       "img2": "https://www.apple.com/ru/watch/images/meta/gps/og__n5qzveqr596m.png",
       "img3": "https://login.kg/image/catalog/new/Aksessuary/Apple/Chasy/Apple%20Watch%20Series%205%2044mm/1.jpg",
-      "id": 6
+      "id": 3
     },
     {
       "category": "phone",
@@ -46,7 +46,7 @@
       "img1": "dasd",
       "img2": "asd",
       "img3": "asds",
-      "id": 7
+      "id": 4
     },
     {
       "category": "laptop",
@@ -58,7 +58,7 @@
       "img1": "87678",
       "img2": "67",
       "img3": "676",
-      "id": 8
+      "id": 5
     },
     {
       "category": "laptop",
@@ -70,7 +70,7 @@
       "img1": "https://login.kg/image/catalog/new/Aksessuary/Apple/Chasy/Apple%20Watch%20Series%205%2044mm/1.jpg",
       "img2": "https://www.apple.com/ru/watch/images/meta/gps/og__n5qzveqr596m.png",
       "img3": "https://login.kg/image/catalog/new/Aksessuary/Apple/Chasy/Apple%20Watch%20Series%205%2044mm/1.jpg",
-      "id": 9
+      "id": 6
     },
     {
       "category": "phone",
@@ -82,7 +82,31 @@
       "img1": "rewr",
       "img2": "dsfsdf",
       "img3": "sdfsdf",
-      "id": 10
+      "id": 7
+    },
+    {
+      "category": "phone",
+      "title": "asus",
+      "model": "sdafg",
+      "description": "sdfghn",
+      "color": "sdfgh",
+      "price": 124565,
+      "img1": "rewr",
+      "img2": "dsfsdf",
+      "img3": "sdfsdf",
+      "id": 8
+    },
+    {
+      "category": "phone",
+      "title": "asus",
+      "model": "sdafg",
+      "description": "sdfghn",
+      "color": "sdfgh",
+      "price": 124565,
+      "img1": "rewr",
+      "img2": "dsfsdf",
+      "img3": "sdfsdf",
+      "id": 9
     }
   ]
 }

@@ -12,12 +12,13 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { basketContext } from "../../context/BasketContextProvider";
 import LiveSearch from "../LiveSearch/LiveSearch";
 
 function NavBar() {
+  const location = useLocation();
   const { basketCount } = React.useContext(basketContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -147,7 +148,12 @@ function NavBar() {
           >
             <Link to="/">Home</Link>
             <Link to="/add">Add Products</Link>
-            <Link to="/list">Products List</Link>
+            {location.pathname === "/list" ? (
+              <span style={{ cursor: "pointer" }}>Products List</span>
+            ) : (
+              <Link to="/list">Products List</Link>
+            )}
+            {/* <Link to="/list">Products List</Link> */}
           </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>

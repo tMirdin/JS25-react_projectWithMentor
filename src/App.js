@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Components/Footer/Footer";
 import NavBar from "./Components/NavBar/NavBar";
 import BasketContextProvider from "./context/BasketContextProvider";
 import ProductContextProvider from "./context/ProductContextProvider";
@@ -10,6 +11,7 @@ const App = () => {
       <ProductContextProvider>
         <NavBar />
         <MainRoutes />
+        <Footer />
       </ProductContextProvider>
     </BasketContextProvider>
   );

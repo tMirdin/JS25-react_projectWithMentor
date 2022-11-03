@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Pagination, Typography } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { productContext } from "../../../context/ProductContextProvider";
@@ -6,30 +6,37 @@ import Filter from "../../Filter/Filter";
 import ProductCard from "../ProductCard/ProductCard";
 
 const ProductsList = () => {
-  const { productsArr, readProduct } = useContext(productContext);
+  const { productsArr, readProduct, pageTotalCount } =
+    useContext(productContext);
   const [paramsSearch, setParamsSearch] = useSearchParams();
   const [category, setCategory] = useState("all");
   const [price, setPrice] = useState([0, 200000]);
-  // console.log(paramsSearch.get("q"));
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
     if (category === "all") {
       setParamsSearch({
         price_gte: price[0],
         price_lte: price[1],
         q: paramsSearch.get("q") || "", // null || ""
+        _page: page,
+        _limit: 3,
       });
     } else {
       setParamsSearch({
         category: category,
         price_gte: price[0],
         price_lte: price[1],
+        _page: page,
+        _limit: 3,
       });
     }
-  }, [category, price]);
+  }, [category, price, page]);
   // отправлю коммит через плагин vs code
+
   useEffect(() => {
     readProduct();
-  }, [paramsSearch]);
+  }, [paramsSearch, pageTotalCount]);
 
   return (
     <>
@@ -58,6 +65,18 @@ const ProductsList = () => {
               </Grid>
             ))
           : null}
+      </Grid>
+      <Grid
+        sx={{ width: "30%", display: "flex", justifyContent: "center" }}
+        mx="auto"
+        my="20px"
+      >
+        <Pagination
+          count={pageTotalCount}
+          color="secondary"
+          page={page}
+          onChange={(e, value) => setPage(value)}
+        />
       </Grid>
     </>
   );

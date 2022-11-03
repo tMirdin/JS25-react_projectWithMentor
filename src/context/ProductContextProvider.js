@@ -9,12 +9,17 @@ const API = "http://localhost:8000/products";
 const INIT_STATE = {
   products: null,
   productDetails: null,
+  pageTotalCount: 1,
 };
 
 function reducer(prevState, action) {
   switch (action.type) {
     case "GET_PRODUCT":
-      return { ...prevState, product: action.payload };
+      return {
+        ...prevState,
+        product: action.payload.data,
+        pageTotalCount: Math.ceil(action.payload.headers["x-total-count"] / 3),
+      };
     case "GET_ONE_PRODUCT":
       return { ...prevState, productDetails: action.payload };
     default:
@@ -40,10 +45,10 @@ const ProductContextProvider = (props) => {
   //   read
   // console.log(location.search);
   async function readProduct() {
-    const { data } = await axios(`${API}${location.search}`);
+    const res = await axios(`${API}${location.search}`);
     dispatch({
       type: "GET_PRODUCT",
-      payload: data,
+      payload: res,
     });
   }
   //   readProduct();
@@ -82,6 +87,7 @@ const ProductContextProvider = (props) => {
     editProduct,
     productsArr: state.product,
     productDetails: state.productDetails,
+    pageTotalCount: state.pageTotalCount,
   };
   return (
     <productContext.Provider value={cloud}>
