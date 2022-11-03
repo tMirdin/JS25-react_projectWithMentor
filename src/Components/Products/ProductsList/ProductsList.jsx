@@ -26,7 +26,7 @@ const ProductsList = () => {
       });
     }
   }, [category, price]);
-
+  // отправлю коммит через плагин vs code
   useEffect(() => {
     readProduct();
   }, [paramsSearch]);
