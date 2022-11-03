@@ -31,7 +31,7 @@ const ProductsList = () => {
         _limit: 3,
       });
     }
-  }, [category, price, page]);
+  }, [paramsSearch, category, price, page]);
   // отправлю коммит через плагин vs code
 
   useEffect(() => {
